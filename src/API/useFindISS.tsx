@@ -20,13 +20,7 @@ export const UseFindISS = () => {
         console.log(error);
       });
   }, []);
-  return (
-    <>
-      <ul>
-        <li>{location}</li>
-      </ul>
-    </>
-  );
+  return <>{location}</>;
 };
 
 //  -----------------------------------------------------

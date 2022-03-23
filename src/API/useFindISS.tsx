@@ -1,10 +1,10 @@
-// import axios from "axios";
 import { useEffect, useState } from "react";
-// import { Nullable } from "../global";
-// import { SatellitePositions } from "../constants";
+// import { isTemplateSpan } from "typescript";
+// import { Data } from "../Data";
 
 export const UseFindISS = () => {
   const [location, setLocation] = useState([]);
+
   const url = "https://api.wheretheiss.at/v1/satellites/25544&units=miles";
 
   useEffect(() => {
@@ -13,14 +13,48 @@ export const UseFindISS = () => {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
-        setLocation(data.name);
+        // console.log(Object.values(data));
+        // console.log(data.latitude);
+        //  @ts-ignore
+        setLocation(Object.entries(data).slice(0, 7));
+        // console.log(Object.values(data).slice(0, 7));
+        let newLocation = Object.entries(data).slice(0, 7);
+        // console.log(newLocation);
+
+        // function isNumber(n: number): boolean {
+        //   return typeof n === "number";
+        // }
+
+        // const arrNumbers = newLocation.filter(isNumber);
+        newLocation.forEach((item) => {
+          item.toFixed(4);
+        });
+        // function newArray(item) {
+        //   return item.typeOf === 'number'
+        // }
+        console.log(arrNumbers);
+        // let lat = data.latitude;
+        // console.log(lat.toFixed(4));
+        // let lng = data.longitude;
+        // console.log(lng.toFixed(4));
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
-  return <>{location}</>;
+
+  return (
+    <>
+      {location.map(([key, value]) => {
+        return (
+          <h3 key={key}>
+            {key}: {value}
+          </h3>
+        );
+      })}
+      <h1>{}</h1>
+    </>
+  );
 };
 
 //  -----------------------------------------------------

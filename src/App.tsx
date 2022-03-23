@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Landing } from "./Landing";
+import { Landing } from "./pages/Landing";
 import { SatellitePositions } from "./constants";
 import { Nullable } from "./global";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 function App() {
   const [positionData, setPositionData] =
@@ -11,7 +12,6 @@ function App() {
       <header className="App-header"></header>
       <div className="container">
         <Landing />
-        <p>Hello y'all</p>
       </div>
     </div>
   );

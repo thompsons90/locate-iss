@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-// import { URL } from "../API/url";
 
 export const Latitude = () => {
-  const [location, setLocation] = useState([]);
+  const [location, setLocation] = useState();
   const url = "https://api.wheretheiss.at/v1/satellites/25544&units=miles";
 
   useEffect(() => {
@@ -20,12 +19,5 @@ export const Latitude = () => {
         console.log(error);
       });
   }, []);
-  return (
-    <>
-      <div id="latitude">
-        <p>Latitude:</p>
-        {location}
-      </div>
-    </>
-  );
+  return <>{location}</>;
 };

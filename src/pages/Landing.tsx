@@ -1,6 +1,10 @@
 import { UseFindISS } from "../API/useFindISS";
 import "./Styles.scss";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { Latitude } from "../components/Latitude";
+import { Longitude } from "../components/Longitude";
+import { Velocity } from "../components/Velocity";
+import { Altitude } from "../components/Altitude";
 // import { MapMarker } from "../API/getLatitude";
 
 export const Landing = () => {
@@ -12,7 +16,10 @@ export const Landing = () => {
       </h2>
       <div id="data-container">
         <div id="iss-data-container">
-          <UseFindISS />
+          <Latitude />
+          <Longitude />
+          <Velocity />
+          <Altitude />
         </div>
         <div id="map-container">
           <MapContainer center={[32.795781, -95.451661]} zoom={3}>

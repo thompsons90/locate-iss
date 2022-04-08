@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-// import { isTemplateSpan } from "typescript";
-// import { Data } from "../Data";
+// import { URL } from "./url";
 
 export const UseFindISS = () => {
   const [location, setLocation] = useState([]);
-
   const url = "https://api.wheretheiss.at/v1/satellites/25544&units=miles";
 
   useEffect(() => {
@@ -13,46 +11,40 @@ export const UseFindISS = () => {
         return res.json();
       })
       .then((data) => {
-        // console.log(Object.values(data));
-        // console.log(data.latitude);
         //  @ts-ignore
-        setLocation(Object.entries(data).slice(0, 7));
-        // console.log(Object.values(data).slice(0, 7));
-        let newLocation = Object.entries(data).slice(0, 7);
-        // console.log(newLocation);
+        // setLocation(Object.entries(data).slice(0, 7));
 
-        // function isNumber(n: number): boolean {
-        //   return typeof n === "number";
-        // }
+        let lat = data.latitude;
+        let latData = lat.toFixed(4);
+        setLocation(latData);
 
-        // const arrNumbers = newLocation.filter(isNumber);
-        newLocation.forEach((item) => {
-          item.toFixed(4);
-        });
-        // function newArray(item) {
-        //   return item.typeOf === 'number'
-        // }
-        console.log(arrNumbers);
-        // let lat = data.latitude;
-        // console.log(lat.toFixed(4));
         // let lng = data.longitude;
-        // console.log(lng.toFixed(4));
+        // lng = lng.toFixed(4);
+        // let alt = data.altitude;
+        // alt = alt.toFixed(3);
+        // let vel = data.velocity;
+        // vel = vel.toFixed(2);
+        console.log(latData);
+        // return latData;
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
-
+  // console.log(latData);
   return (
     <>
-      {location.map(([key, value]) => {
+      {/* {location.map(([key, value]) => {
         return (
           <h3 key={key}>
             {key}: {value}
           </h3>
         );
-      })}
-      <h1>{}</h1>
+      })} */}
+      <div id="latitude">
+        <p>Latitude:</p>
+        {location}
+      </div>
     </>
   );
 };

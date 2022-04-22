@@ -4,7 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { useGetLatitude } from "../API/useGetLatitude";
 import { useGetLongitude } from "../API/useGetLongitude";
 import { Velocity } from "../components/Velocity";
-import { Altitude } from "../components/Altitude";
+// import { Altitude } from "../components/Altitude";
 import { Longitude } from "../components/Longitude";
 import { Latitude } from "../components/Latitude";
 // import { MapMarker } from "../API/getLatitude";
@@ -19,21 +19,15 @@ export const Landing = () => {
       <div id="data-container">
         <div id="iss-data-container">
           <div className="data-container">
-            <p>Latitude:</p>
             <Latitude />
           </div>
           <div className="data-container">
-            <p>Longitude:</p>
             <Longitude />
           </div>
           <div className="data-container">
-            <p>Velocity:</p>
             <Velocity />
           </div>
-          <div className="data-container">
-            <p>Altitude:</p>
-            <Altitude />
-          </div>
+          <div className="data-container">{/* <Altitude /> */}</div>
         </div>
         <div id="map-container">
           <MapContainer center={[useGetLatitude(), useGetLongitude()]} zoom={5}>

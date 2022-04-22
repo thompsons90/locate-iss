@@ -14,7 +14,6 @@ export const Latitude = () => {
           let lat = data.latitude;
           let latData = lat.toFixed(4);
           setLatitude(latData);
-          console.log(latData);
         })
         .catch((error) => {
           console.log(error);

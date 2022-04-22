@@ -15,7 +15,6 @@ export const Altitude = () => {
           let alt = data.altitude;
           let altData = alt.toFixed(3);
           setAltitude(altData);
-          console.log(altData);
         })
         .catch((error) => {
           console.log(error);

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 // import { URL } from "../API/url";
 
 export const useGetLatitude = () => {
-  const [location, setLocation] = useState(0);
+  const [latitude, setLatitude] = useState(0);
   const url = "https://api.wheretheiss.at/v1/satellites/25544&units=miles";
 
   useEffect(() => {
@@ -11,14 +11,11 @@ export const useGetLatitude = () => {
         return res.json();
       })
       .then((data) => {
-        let lat = data.latitude;
-        let latData = lat.toFixed(4);
-        setLocation(latData);
-        console.log(latData);
+        setLatitude(data.latitude);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
-  return location;
+  return latitude;
 };

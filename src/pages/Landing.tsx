@@ -18,15 +18,9 @@ export const Landing = () => {
       </h2>
       <div id="data-container">
         <div id="iss-data-container">
-          <div className="data-container">
-            <Latitude />
-          </div>
-          <div className="data-container">
-            <Longitude />
-          </div>
-          <div className="data-container">
-            <Velocity />
-          </div>
+          <div className="data-container">{/* <Latitude /> */}</div>
+          <div className="data-container">{/* <Longitude /> */}</div>
+          <div className="data-container">{/* <Velocity /> */}</div>
           <div className="data-container">{/* <Altitude /> */}</div>
         </div>
         <div id="map-container">

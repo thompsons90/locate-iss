@@ -15,7 +15,6 @@ export const Longitude = () => {
           let lng = data.longitude;
           let lngData = lng.toFixed(4);
           setLongitude(lngData);
-          console.log(lngData);
         })
         .catch((error) => {
           console.log(error);

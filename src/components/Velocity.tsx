@@ -15,7 +15,6 @@ export const Velocity = () => {
           let vel = data.velocity;
           let velData = vel.toFixed(2);
           setVelocity(velData);
-          console.log(velData);
         })
         .catch((error) => {
           console.log(error);

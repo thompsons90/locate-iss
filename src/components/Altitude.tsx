@@ -23,10 +23,7 @@ export const Altitude = () => {
   }, []);
   return (
     <>
-      <div id="Altitude">
-        <p>Altitude:</p>
-        {altitude}
-      </div>
+      <div id="Altitude">{altitude}</div>
     </>
   );
 };

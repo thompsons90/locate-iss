@@ -21,10 +21,5 @@ export const Longitude = () => {
         });
     }, 5000);
   }, []);
-  return (
-    <div id="Longitude">
-      <p>Longitude:</p>
-      {longitude}
-    </div>
-  );
+  return <div id="Longitude">{longitude}</div>;
 };

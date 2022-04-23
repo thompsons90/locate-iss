@@ -20,10 +20,5 @@ export const Latitude = () => {
         });
     }, 5000);
   }, []);
-  return (
-    <div id="Latitude">
-      <p>Latitude:</p>
-      {latitude}
-    </div>
-  );
+  return <div id="Latitude">{latitude}</div>;
 };

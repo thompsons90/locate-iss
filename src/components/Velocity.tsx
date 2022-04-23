@@ -23,10 +23,7 @@ export const Velocity = () => {
   }, []);
   return (
     <>
-      <div id="velocity">
-        <p>Velocity:</p>
-        {velocity}
-      </div>
+      <div id="velocity">{velocity}</div>
     </>
   );
 };

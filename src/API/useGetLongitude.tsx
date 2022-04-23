@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 export const useGetLongitude = () => {
   const [longitude, setLongitude] = useState(0);
@@ -12,9 +12,9 @@ export const useGetLongitude = () => {
       .then((data) => {
         setLongitude(data.longitude);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch((err) => {
+        console.log(err);
       });
-  }, []);
+  });
   return longitude;
 };

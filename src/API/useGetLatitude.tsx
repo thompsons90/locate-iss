@@ -12,6 +12,7 @@ export const useGetLatitude = () => {
       })
       .then((data) => {
         setLatitude(data.latitude);
+        console.log(latitude);
       })
       .catch((error) => {
         console.log(error);

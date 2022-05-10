@@ -1,53 +1,39 @@
-// import { MapLocation } from "../utils";
 import "./Styles.scss";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { LatLngExpression } from "leaflet";
-import { useGetLatitude } from "../API/useGetLatitude";
-import { useGetLongitude } from "../API/useGetLongitude";
-import { Velocity } from "../components/Velocity";
-import { Altitude } from "../components/Altitude";
-import { Longitude } from "../components/Longitude";
-import { Latitude } from "../components/Latitude";
-import { useEffect, useState } from "react";
-import { center } from "../API/center";
-// import { MapMarker } from "../API/getLatitude";
 
-// const center: LatLngExpression = [useGetLatitude(), 0];
-// const center = { lat: useGetLatitude, lng: useGetLongitude };
-const test = center();
+import { useEffect, useState } from "react";
+import { getCenter } from "../API/getCenter";
+import { Map } from "../components/Map";
+import { Altitude } from "../API/Altitude";
 
 export const Landing = () => {
-  // useEffect(() => {
-  //   const newPosition: LatLngExpression = [];
-  // });
-  const [useTest, setUseTest] = useState<LatLngExpression>([0, 0]);
-  console.log("rendering");
-  useEffect = () => {
-    setInterval(() => {
-      setUseTest(center());
-    }, 5000);
+  const [center, setCenter] = useState<LatLngExpression | null>(null);
+  useEffect(() => {
+    if (center === null) {
+      getCenter().then((x) => {
+        const newCenter: LatLngExpression = x as LatLngExpression;
+        setCenter(newCenter);
+      });
+    }
+  }, []);
+
+  const showMap = () => {
+    if (center !== null) {
+      return <Map center={center} />;
+    }
   };
 
   return (
     <div id="main-container">
       <h1>International Space Station </h1>
-
       <h2>
         <b>Location</b>
       </h2>
       <div id="data-container">
+        {/* Move map container to component */}
         <div id="map-container">
-          <MapContainer center={useTest} zoom={5}>
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <Marker position={[useGetLatitude(), useGetLongitude()]}>
-              <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
-              </Popup>
-            </Marker>
-          </MapContainer>
+          {/* put the MapContainer in a conditional to wait for the API data to load, THEN render our map data */}
+          {showMap()}
         </div>
       </div>
       <div id="iss-data-container">
@@ -67,7 +53,7 @@ export const Landing = () => {
         </div>
         <div className="data-container">
           <p>Altitude:</p>
-          {/* <Altitude /> */}
+          <p id="Altitude"></p>
         </div>
       </div>
       <div id="marker">{/* <MapMarker /> */}</div>

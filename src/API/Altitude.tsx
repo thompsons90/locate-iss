@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-// import { URL } from "./url";
 
-export const Altitude = () => {
+export const Altitude = async () => {
   const [altitude, setAltitude] = useState([]);
   const url = "https://api.wheretheiss.at/v1/satellites/25544&units=miles";
 

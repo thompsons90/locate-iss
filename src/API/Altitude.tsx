@@ -10,6 +10,7 @@ export const Altitude = () => {
         return res.json();
       })
       .then((data) => {
+        console.log(data);
         let alt = data.altitude;
         let altData = alt.toFixed(3);
         setAltitude(altData);

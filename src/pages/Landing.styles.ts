@@ -60,12 +60,13 @@ export const CoolFacts = styled.ul`
   list-style: none;
   font-size: 16px;
   width: 100%;
-  height: 400px;
-  padding: 10px;
+  height: 380px;
+  border: 2px solid 5890cb;
+  padding: 0px;
   letter-spacing: 1.5px;
   li {
     line-height: 1.65;
-    padding: 10px;
+    padding-top: 10px;
     &: before {
       content: "🚀";
     }

@@ -1,4 +1,57 @@
-# Getting Started with Create React App
+# 👨‍🚀 Welcome to Space, Cadet!
+
+![Moon landing](public\pictures\moon-landing-image.png)
+
+## International Space Station Locator
+
+This fun little project calls on a RESTful API to give the user the up-to-date location of the I.S.S. above the Earth.
+
+# 🚀 We have Lift Off!
+
+Here is a link to the launched project, hosted with Netlify. "Ground control to Major Tom," Enjoy!
+
+> [Hosted Site Link](https://6283151b4cf55f1445c45291--neon-dodol-053c51.netlify.app/)
+
+## 📱 Responsive and mobile-friendly
+
+- This project was built to work seemlessly on both mobile devices and desktop.
+
+# 🏗️ Blueprints
+
+- [@types/React](https://www.npmjs.com/package/@types/react): TypeScript definitions for React.
+- [typescript](https://www.npmjs.com/package/typescript): TypeScript is a language for application scale JavaScript development.
+- [react](https://www.npmjs.com/package/react): React is a JavaScript library for building user interfaces.
+- [@types/styled-components](https://www.npmjs.com/package/@types/styled-components): TypeScript definitions for styled-components.
+- [sass](https://www.npmjs.com/package/sass): Sass/Scss for global styling purposes.
+- [react-leaflet](https://react-leaflet.js.org/): React components for Leaflet Maps.
+- [leaflet](https://leafletjs.com/): A JavaScript library for interactive maps.
+- [whereTheIssAt](https://wheretheiss.at/): Real-time ISS location API.
+
+## 🧪 Test it out
+
+**Requires prerequisite knowledge of frontend development and git commands**
+Side note: This free api only allows for a number of calls per day, therefore I left out the intended timer that would refresh the data every second. In order to update the info, please refresh the app. Thanks!
+
+1. Clone the repository
+
+```sh
+git clone https://github.com/thompsons90/locate-iss
+```
+
+2. Install dependencies
+
+```sh
+yarn
+```
+
+3. Run the app in development mode
+
+```sh
+yarn start
+```
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -6,41 +59,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+- yarn add: adds a package to use in your current package.
+- yarn init: initializes the development of a package.
+- yarn install: installs all the dependencies defined in a package.json file.
+- yarn publish: publishes a package to a package manager.
+- yarn remove: removes an unused package from your current package.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Default Command
 
-### `npm run build`
+Running yarn with no command will run yarn install, passing through any provided flags.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Happy Exploring!

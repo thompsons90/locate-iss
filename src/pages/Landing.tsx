@@ -5,6 +5,18 @@ import { useEffect, useState } from "react";
 import { getCenter } from "../API/getCenter";
 import { Map } from "../components/Map";
 import { Altitude } from "../API/Altitude";
+import {
+  Container,
+  DataContainer,
+  HeaderContainer,
+  StatsContainer,
+  DataSet,
+  CoolFacts,
+} from "./Landing.styles";
+import { MapContainer } from "react-leaflet";
+import { Latitude } from "../API/Latitude";
+import { Longitude } from "../API/Longitude";
+import { Velocity } from "../API/Velocity";
 
 export const Landing = () => {
   const [center, setCenter] = useState<LatLngExpression | null>(null);
@@ -24,39 +36,45 @@ export const Landing = () => {
   };
 
   return (
-    <div id="main-container">
-      <h1>International Space Station </h1>
-      <h2>
-        <b>Location</b>
-      </h2>
-      <div id="data-container">
-        {/* Move map container to component */}
-        <div id="map-container">
-          {/* put the MapContainer in a conditional to wait for the API data to load, THEN render our map data */}
-          {showMap()}
-        </div>
-      </div>
-      <div id="iss-data-container">
-        <div className="data-container">
-          <p>Latitude:</p>
-          {
-            // <Latitude />
-          }
-        </div>
-        <div className="data-container">
-          <p>Longitude:</p>
-          {/* <Longitude /> */}
-        </div>
-        <div className="data-container">
-          <p>Velocity:</p>
-          {/* <Velocity /> */}
-        </div>
-        <div className="data-container">
-          <p>Altitude:</p>
-          <p id="Altitude"></p>
-        </div>
-      </div>
-      <div id="marker">{/* <MapMarker /> */}</div>
-    </div>
+    <Container>
+      <HeaderContainer>
+        <h1>International Space Station </h1>
+        <h2>
+          <b>Location</b>
+        </h2>
+      </HeaderContainer>
+      <DataContainer>
+        <MapContainer>{showMap()}</MapContainer>
+      </DataContainer>
+      <StatsContainer>
+        <DataSet>
+          <p>Latitude: </p>
+          <Latitude />
+        </DataSet>
+        <DataSet>
+          <p>Longitude: </p>
+          <Longitude />
+        </DataSet>
+        <DataSet>
+          <p>Velocity: </p>
+          <Velocity />
+        </DataSet>
+        <DataSet>
+          <p>Altitude: </p>
+          <Altitude />
+        </DataSet>
+      </StatsContainer>
+      <DataSet>
+        <h3>Cool Facts:</h3>
+      </DataSet>
+      <CoolFacts>
+        <li>It flies around the world every 90 minutes</li>
+        <li>After the moon, the ISS is the 2nd brightest object at night</li>
+        <li>
+          There are 2 bathrooms, a gym, 6 sleeping areas, and a 360° bay window
+        </li>
+        <li>6 Spaceships can dock to the station at the same time</li>
+      </CoolFacts>
+    </Container>
   );
 };

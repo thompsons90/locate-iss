@@ -8,9 +8,6 @@ export const Map = (props: any) => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Marker position={props.center}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
       </Marker>
     </MapContainer>
   );

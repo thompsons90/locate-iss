@@ -1,13 +1,14 @@
+import { LatLngExpression } from 'leaflet';
 import { URL } from './Constants';
 
-export const getCenter = async () => {
+export const getCenter = async (): Promise<LatLngExpression> => {
   let tryCount = 0;
   
   while (tryCount < 3) {
     try {
       const res = await fetch(URL);
       const data = await res.json();
-      const centerData = [data.latitude, data.longitude];
+      const centerData = [data.latitude, data.longitude] as LatLngExpression;
       return centerData;
     } catch (err) {
       tryCount++;

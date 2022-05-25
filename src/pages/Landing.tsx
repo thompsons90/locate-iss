@@ -18,8 +18,7 @@ export const Landing = () => {
   useEffect(() => {
     if (center === null) {
       getCenter().then((x) => {
-        const newCenter: LatLngExpression = x as LatLngExpression;
-        setCenter(newCenter);
+        setCenter(x);
       });
     }
   }, []);

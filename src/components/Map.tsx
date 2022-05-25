@@ -1,6 +1,7 @@
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
 
 export const Map = (props: any) => {
+  //focus on the process of what's going on, the logic, touch on built in library and go
   return (
     <MapContainer center={props.center} zoom={3}>
       <TileLayer

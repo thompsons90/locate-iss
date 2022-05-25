@@ -1,3 +1,5 @@
+//more of a models file
+
 export interface SatellitePositions {
   name: string;
   latitude: number;

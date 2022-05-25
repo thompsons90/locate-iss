@@ -16,4 +16,5 @@ export const getCenter = async () => {
 
   }
   alert('Houston, we have a problem... please check internet connection and reload the page.')
+  return ([0, 0]);
 };
